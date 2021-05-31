@@ -1,0 +1,19 @@
+/* Data ballon for index screen
+========================================== */
+
+.tooltip-html {
+    position: relative;
+    cursor: pointer;
+    display: inline-block;
+
+    &__content {
+        padding: .5em 0;
+        max-height: 200px;
+        overflow: auto;
+        overflow: auto;
+    }
+
+    &__val {
+        padding: .5em 0;
+    }
+}
