@@ -1,1 +1,1 @@
-.tooltip-html{position:relative;cursor:pointer;display:inline-block}.tooltip-html__content{padding:.5em 0;max-height:200px;overflow:auto}.tooltip-html__val{padding:.5em 0}
+.tooltip-html{cursor:pointer;display:inline-block;position:relative}.tooltip-html__content{max-height:200px;overflow:auto;padding:.5em 0}.tooltip-html__val{padding:.5em 0}

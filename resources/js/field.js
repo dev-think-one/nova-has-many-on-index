@@ -1,3 +1,5 @@
-Nova.booting((Vue, router, store) => {
-  Vue.component('index-nova-has-many-index', require('./components/IndexField'))
+import IndexField from './components/IndexField'
+
+Nova.booting((app, store) => {
+  app.component('index-nova-has-many-index', IndexField)
 })

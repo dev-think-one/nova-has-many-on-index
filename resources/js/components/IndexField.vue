@@ -1,58 +1,55 @@
 <template>
-    <div class="tooltip-html">
-        <div class="tooltip-html__val">
-            <span>{{ field.value.val }}</span>
-            <a
-                v-if="field.value.val > 0"
-                class="no-underline font-bold dim text-primary"
-                @click="toggleShow">
-                <template v-if="!isShowContent">
-                    {{__('Show more')}}
-                </template>
-                <template v-else>
-                    {{__('Show less')}}
-                </template>
-            </a>
+  <div class="">
+    <Badge
+      v-if="field.value"
+      class="mr-2 mb-3 bg-primary-50 dark:bg-primary-500 text-primary-600 dark:text-gray-900 space-x-1 truncate"
+    >
+       <span>
+          {{ field.value }}
+       </span>
+      <a
+        v-if="field.value > 0"
+        class="link-default"
+        @click.stop="toggleShow">
+        <HeroiconsOutlineEye v-if="!isShowContent" class="w-4"/>
+        <HeroiconsOutlineEyeOff v-else  class="w-4"/>
+      </a>
+    </Badge>
+    <transition>
+      <div v-show="isShowContent" class="">
+        <div v-for="item in field.displayedAs.items"
+             class="truncate flex items-center">
+          <Icon
+            v-if="item.icon"
+            :type="item.icon.type"
+            :solid="item.icon.solid"
+            :class="[item.icon.class, 'mr-1']"
+          />
+          <a
+            :href="item.url"
+            @click.stop
+            class="link-default"
+          >
+            {{ item.title }}
+          </a>
         </div>
-        <transition>
-            <div v-show="isShowContent" class="tooltip-html__content">
-                <div v-for="item in field.value.items" class="truncate">
-                    <component
-                        v-if="item.iconComponents"
-                        :is="item.iconComponents.name"
-                        v-bind="item.iconComponents.attributes"
-                    />
-                    <router-link
-                        :to="{
-                          name: 'detail',
-                          params: {
-                            resourceName: field.value.resourceName,
-                            resourceId: item.id,
-                          },
-                }"
-                        class="no-underline font-bold dim text-primary"
-                    >
-                        {{ item.title }}
-                    </router-link>
-                </div>
-            </div>
-        </transition>
-
-    </div>
+      </div>
+    </transition>
+  </div>
 </template>
 
 <script>
 export default {
-    props: ['resourceName', 'field'],
-    data() {
-        return {
-            isShowContent: false
-        }
-    },
-    methods: {
-        toggleShow() {
-            this.isShowContent = !this.isShowContent;
-        }
+  props: ['resourceName', 'field'],
+  data() {
+    return {
+      isShowContent: false
     }
+  },
+  methods: {
+    toggleShow() {
+      this.isShowContent = !this.isShowContent;
+    }
+  }
 }
 </script>

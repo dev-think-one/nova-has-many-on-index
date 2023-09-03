@@ -18,18 +18,17 @@ NovaHasManyOnIndex::make(trans('cols-computed.subscriptions'), 'subscriptions_co
         ->displayUsing(function ($val, $model) {
             return [
                 'val'          => $val,
-                'resourceName' => 'user-subscriptions',
                 'items'        => $model->subscriptions->map(function ($item) {
                     return [
-                        'id'             => $item->id,
-                        'title'          => $item->title,
-                        'iconComponents' => [
-                            'name'       => 'boolean-icon',
-                            'attributes' => [
-                                'value'  => $item->is_active_subscription,
-                                'width'  => 20,
-                                'height' => 20,
-                            ],
+                        'url'    => route('nova.pages.detail', [
+                            'resource' => Contact::uriKey(),
+                            'resourceId' => $item->getKey(),
+                        ]),
+                        'title' => "({$item->getKey()}) $item->name",
+                        'icon' => [
+                            'type' => 'trash',
+                            'solid' => true,
+                            'class' => 'text-red-500',
                         ],
                     ];
                 })->all(),
