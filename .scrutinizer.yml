@@ -1,7 +1,9 @@
 filter:
-  excluded_paths: [tests/*]
+  excluded_paths: [ tests/* ]
 
 build:
+  environment:
+    node: 16.19.0
   nodes:
     analysis:
       image: default-bionic
