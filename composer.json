@@ -1,17 +1,17 @@
 {
-    "name": "yaroslawww/nova-has-many-on-index",
+    "name": "think.studio/nova-has-many-on-index",
     "description": "A Laravel Nova field used to display a 'Has Many' relationship on the index screen.",
     "keywords": [
         "laravel",
         "nova-field",
         "has-many"
     ],
-    "homepage": "https://github.com/yaroslawww/nova-has-many-on-index",
+    "homepage": "https://github.com/dev-think-one/nova-has-many-on-index",
     "license": "MIT",
     "authors": [
         {
             "name": "Yaroslav Georgitsa",
-            "email": "yaroslav.georgitsa@gmail.com",
+            "email": "yg@think.studio",
             "homepage": "https://github.com/yaroslawww",
             "role": "Developer"
         }

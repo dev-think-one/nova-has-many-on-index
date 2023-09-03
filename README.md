@@ -6,7 +6,7 @@ A Laravel Nova field used to display a 'Has Many' relationship on the index scre
 ## Installation
 
 ```bash
-composer require yaroslawww/nova-has-many-on-index
+composer require think.studio/nova-has-many-on-index
 ```
 
 ![](./assets/images/has-many-on-index.gif)
