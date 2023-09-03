@@ -5,7 +5,7 @@ A Laravel Nova field used to display a 'Has Many' relationship on the index scre
 
 ## Installation
 
-```bash
+```shell
 composer require think.studio/nova-has-many-on-index
 ```
 
@@ -13,8 +13,8 @@ composer require think.studio/nova-has-many-on-index
 
 ## Usage
 
-```injectablephp
-NovaHasManyOnIndex::make(trans('cols-computed.subscriptions'), 'subscriptions_count')
+```php
+\NovaHasManyIndex\NovaHasManyOnIndex::make(trans('cols-computed.subscriptions'), 'subscriptions_count')
         ->displayUsing(function ($val, $model) {
             return [
                 'val'          => $val,
